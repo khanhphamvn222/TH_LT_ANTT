@@ -5,5 +5,7 @@ secure.log
 secure.log.sig
 secure.log.*.gz
 gitsecure.log
-Buoi2/mini-ca/certs/
+buoi2/lab2/certs/
+buoi2/lab1/files/*.enc
+buoi2/lab1/files/*.dec
 

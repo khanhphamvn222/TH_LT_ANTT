@@ -86,8 +86,8 @@ def create_root_ca():
     return key, cert
 
 
-def create_intermediate_ca(root_ca):
-    root_key, root_cert = _normalize_ca(root_ca)
+def create_intermediate_ca(root_ca, root_cert=None):
+    root_key, root_cert = _normalize_ca(root_ca, root_cert)
     key = generate_key()
     subject = x509.Name(
         [
@@ -121,13 +121,18 @@ def create_intermediate_ca(root_ca):
         )
         .sign(root_key, hashes.SHA256())
     )
-    save_key(key, "intermediate_ca_key.pem")
-    save_cert(cert, "intermediate_ca_cert.pem")
+    save_key(key, "intermediate_key.pem")
+    save_cert(cert, "intermediate_cert.pem")
     return key, cert
 
 
-def issue_certificate(ca, subject_info):
-    ca_key, ca_cert = _normalize_ca(ca)
+def issue_certificate(ca, ca_cert=None, subject_info=None):
+    if isinstance(ca_cert, dict) and subject_info is None:
+        subject_info = ca_cert
+        ca_cert = None
+    ca_key, ca_cert = _normalize_ca(ca, ca_cert)
+    if subject_info is None:
+        subject_info = {}
     key = generate_key()
     common_name = subject_info.get("common_name") or subject_info.get("cn") or "example.local"
     organization = subject_info.get("organization") or subject_info.get("org") or "End Entity"
@@ -168,7 +173,7 @@ def issue_certificate(ca, subject_info):
         )
         .sign(ca_key, hashes.SHA256())
     )
-    safe_name = common_name.replace("*", "wildcard").replace(".", "_")
+    safe_name = common_name.replace("*", "wildcard").replace(".", "_").replace(" ", "_")
     save_key(key, f"{safe_name}_key.pem")
     save_cert(cert, f"{safe_name}_cert.pem")
     return key, cert
@@ -210,7 +215,9 @@ def check_ocsp_status(cert_serial):
     return "revoked" if serial in REVOKED_CERTS else "good"
 
 
-def _normalize_ca(ca):
+def _normalize_ca(ca, cert=None):
+    if cert is not None:
+        return ca, cert
     if isinstance(ca, tuple) and len(ca) == 2:
         return ca
     if isinstance(ca, dict):
