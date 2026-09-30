@@ -2,7 +2,7 @@ from ca_utils import load_cert
 
 
 def main():
-    cert = load_cert("certs/KANE_cert.pem")
+    cert = load_cert("certs/Pham_Duy_Khanh_2387700029_cert.pem")
     print("Subject:", cert.subject.rfc4514_string())
     print("Issuer :", cert.issuer.rfc4514_string())
     print("Serial :", hex(cert.serial_number))

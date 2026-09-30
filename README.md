@@ -1,6 +1,6 @@
 # TH_LT_ANTT - Bai Thuc Hanh An Toan Thong Tin
 
-**Tac gia:** KANE
+**Tac gia:** Phạm Duy Khánh - MSSV 2387700029
 
 Repo duoc chia theo tung buoi thuc hanh:
 

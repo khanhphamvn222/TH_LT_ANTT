@@ -33,14 +33,14 @@ def setup_ca():
 
 def issue_cert_demo(inter_key, inter_cert):
     subject_info = {
-        "common_name": "KANE",
+        "common_name": "Pham Duy Khanh 2387700029",
         "org": "HUTECH Security",
         "country": "VN",
     }
     print("Phat hanh chung chi nguoi dung cuoi...")
     issue_certificate(inter_key, inter_cert, subject_info)
-    cert_path = os.path.join("certs", "KANE_cert.pem")
-    key_path = os.path.join("certs", "KANE_key.pem")
+    cert_path = os.path.join("certs", "Pham_Duy_Khanh_2387700029_cert.pem")
+    key_path = os.path.join("certs", "Pham_Duy_Khanh_2387700029_key.pem")
     print(f"Da phat hanh: {cert_path}, {key_path}")
     return cert_path
 
@@ -58,9 +58,9 @@ def verify_chain_demo(user_cert_path):
 
 
 def revoke_demo():
-    print("Thu hoi chung chi KANE...")
+    print("Thu hoi chung chi Pham Duy Khanh...")
     revoke_certificate(
-        os.path.join("certs", "KANE_cert.pem"),
+        os.path.join("certs", "Pham_Duy_Khanh_2387700029_cert.pem"),
         os.path.join("certs", "intermediate_cert.pem"),
         os.path.join("certs", "intermediate_key.pem"),
         reason=x509.ReasonFlags.key_compromise,
@@ -69,8 +69,8 @@ def revoke_demo():
 
 
 def ocsp_check_demo():
-    print("Kiem tra trang thai OCSP cua KANE_cert.pem...")
-    revoked = check_revocation_status(os.path.join("certs", "KANE_cert.pem"))
+    print("Kiem tra trang thai OCSP cua Pham_Duy_Khanh_2387700029_cert.pem...")
+    revoked = check_revocation_status(os.path.join("certs", "Pham_Duy_Khanh_2387700029_cert.pem"))
     print(f"Trang thai: {'Revoked' if revoked else 'Valid'}")
     return revoked
 

@@ -61,13 +61,13 @@ class CADemoApp(tk.Tk):
         if not inter_key or not inter_cert:
             messagebox.showerror("Loi", "Phai tao CA truoc khi phat hanh chung chi")
             return
-        self.log("Phat hanh chung chi KANE...")
-        issue_certificate(inter_key, inter_cert, {"common_name": "KANE", "org": "HUTECH Security", "country": "VN"})
-        self.log("Da phat hanh: certs/KANE_cert.pem, certs/KANE_key.pem")
+        self.log("Phat hanh chung chi Pham Duy Khanh...")
+        issue_certificate(inter_key, inter_cert, {"common_name": "Pham Duy Khanh 2387700029", "org": "HUTECH Security", "country": "VN"})
+        self.log("Da phat hanh: certs/Pham_Duy_Khanh_2387700029_cert.pem, certs/Pham_Duy_Khanh_2387700029_key.pem")
         messagebox.showinfo("Thong bao", "Phat hanh chung chi thanh cong")
 
     def verify_chain(self):
-        cert_path = os.path.join("certs", "KANE_cert.pem")
+        cert_path = os.path.join("certs", "Pham_Duy_Khanh_2387700029_cert.pem")
         if not os.path.exists(cert_path):
             messagebox.showerror("Loi", "Chua co chung chi user de kiem tra")
             return
@@ -81,7 +81,7 @@ class CADemoApp(tk.Tk):
 
     def revoke_cert(self):
         paths = [
-            os.path.join("certs", "KANE_cert.pem"),
+            os.path.join("certs", "Pham_Duy_Khanh_2387700029_cert.pem"),
             os.path.join("certs", "intermediate_cert.pem"),
             os.path.join("certs", "intermediate_key.pem"),
         ]
@@ -89,11 +89,11 @@ class CADemoApp(tk.Tk):
             messagebox.showerror("Loi", "Thieu file chung chi hoac khoa de thu hoi")
             return
         revoke_certificate(paths[0], paths[1], paths[2], reason=x509.ReasonFlags.key_compromise)
-        self.log("Da thu hoi chung chi KANE")
+        self.log("Da thu hoi chung chi Pham Duy Khanh")
         messagebox.showinfo("Thong bao", "Chung chi da duoc thu hoi")
 
     def ocsp_check(self):
-        cert_path = os.path.join("certs", "KANE_cert.pem")
+        cert_path = os.path.join("certs", "Pham_Duy_Khanh_2387700029_cert.pem")
         if not os.path.exists(cert_path):
             messagebox.showerror("Loi", "Chua co chung chi user de kiem tra OCSP")
             return

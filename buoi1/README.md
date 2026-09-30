@@ -1,6 +1,6 @@
 # TH_LT_ANTT – Bài Thực Hành An Toàn Thông Tin
 
-**Tác giả:** KANE
+**Tác giả:** Phạm Duy Khánh - MSSV 2387700029
 
 Các lab về lập trình bảo mật cơ bản: validation, pre-commit hooks, logging bảo mật.
 
