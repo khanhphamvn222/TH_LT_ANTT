@@ -1,64 +1,31 @@
-# TH_LT_ANTT – Bài Thực Hành An Toàn Thông Tin
+# TH_LT_ANTT - Bai Thuc Hanh An Toan Thong Tin
 
-**Tác giả:** KANE
+**Tac gia:** KANE
 
-Các lab về lập trình bảo mật cơ bản: validation, pre-commit hooks, logging bảo mật.
+Repo duoc chia theo tung buoi thuc hanh:
 
-## Cấu trúc
-
-```
-├── Lab01/    SecureValidator – thư viện kiểm tra và làm sạch đầu vào
-├── Lab02/    GitSecure – pre-commit hook phát hiện thông tin nhạy cảm
-└── Lab03/    SecureLogger – hệ thống ghi log bảo mật tích hợp Flask
+```text
+.
+├── Buoi1/    Cac lab validation, GitSecure pre-commit hook, SecureLogger
+└── Buoi2/    Ma hoa, trien khai PKI va Certificate Authority
 ```
 
-## Lab01 – SecureValidator
+## Buoi1
 
-Thư viện validate và sanitize input gồm 5 hàm: `validate_email`, `validate_url`, `validate_filename`, `sanitize_sql_input`, `sanitize_html_input`.
+Noi dung goc gom:
 
-`Exploit.md` phân tích các điểm yếu: SSRF qua URL nội bộ, SQL injection bằng toán tử `||`, XSS qua thuộc tính `href`.
+- `Lab01`: SecureValidator - thu vien kiem tra va lam sach dau vao.
+- `Lab02`: GitSecure - pre-commit hook phat hien thong tin nhay cam.
+- `Lab03`: SecureLogger - he thong ghi log bao mat tich hop Flask.
+- `screenshots`: anh minh hoa ket qua Buoi 1.
 
-| Hàm | Lỗ hổng | Bypass |
-|-----|---------|--------|
-| `validate_email` | Regex sai RFC | `user..name@`, thiếu `+tag` |
-| `validate_url` | Không chặn IP nội bộ | SSRF qua `127.0.0.1`, `169.254.x.x` |
-| `validate_filename` | Phụ thuộc thứ tự decode | URL-encode path traversal |
-| `sanitize_sql_input` | Blacklist không đầy đủ | `\|\|` operator, comment injection |
-| `sanitize_html_input` | Chỉ escape content | `javascript:` trong href |
+Xem them tai [Buoi1/README.md](Buoi1/README.md).
 
-## Lab02 – GitSecure Pre-commit Hook
+## Buoi2
 
-Hook tự động chặn commit nếu phát hiện thông tin nhạy cảm (password, token, API key) hoặc file có quyền world-writable.
+Noi dung moi gom:
 
-```bash
-cd Lab02
-pip install -r requirements.txt
-git init && git config core.hooksPath .githooks
-chmod +x .githooks/pre-commit
-```
+- `crypto-toolkit`: AES-GCM, RSA signature, Argon2 password hashing, CLI, Flask API, Tkinter GUI va tests.
+- `mini-ca`: tao Root CA, Intermediate CA, cap chung chi, xac thuc certificate chain, revoke certificate va OCSP status.
 
-| Pattern | Ví dụ bị chặn |
-|---------|---------------|
-| `apikey = "..."` | `apikey = "AbCdEf0123456789"` |
-| `secret = "..."` | `secret = "mysecret"` |
-| `password = "..."` | `password = "123456"` |
-| `token = "..."` | `token = "abc1234567890"` |
-| AWS Access Key | `AKIA...` |
-
-## Lab03 – SecureLogger
-
-Flask API `/validate` tích hợp logging bảo mật: tự động che PII, ghi JSON, nén log cũ bằng gzip, hash SHA-256 để phát hiện giả mạo log.
-
-```bash
-cd Lab03
-pip install -r requirements.txt
-python app.py
-```
-
-| Tấn công | Kết quả |
-|----------|---------|
-| XSS `<script>` | HTML-escaped → vô hiệu |
-| SQL Injection `' OR 1=1` | Strip keywords → vô hiệu |
-| Path Traversal `../../etc/passwd` | filename = false |
-| PII trong log | Auto-masked `<email_masked>` |
-| Log tampering | SHA-256 signature trong `.sig` |
+Xem them tai [Buoi2/README.md](Buoi2/README.md).
