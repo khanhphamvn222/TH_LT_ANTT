@@ -1,6 +1,7 @@
 # Bao cao thuc hanh Buoi 2: Ma hoa du lieu va trien khai PKI
 
-- Sinh vien: KANE
+- Sinh vien: Phạm Duy Khánh
+- MSSV: 2387700029
 - Mon hoc: Lap trinh an toan / Bao mat ung dung
 
 ---
@@ -100,7 +101,7 @@ Xay dung he thong PKI don gian:
 
 - Tao **Root CA** tu ky.
 - Tao **Intermediate CA** duoc Root CA ky.
-- Phat hanh chung chi end-entity cho `KANE`.
+- Phat hanh chung chi end-entity cho `Phạm Duy Khánh - 2387700029`.
 - Kiem tra chuoi tin cay `User Cert -> Intermediate CA -> Root CA`.
 - Thu hoi chung chi bang CRL va kiem tra trang thai kieu OCSP.
 
@@ -113,7 +114,7 @@ python demo.py
 
 ![Demo Mini CA CLI](./images/lab2_step1_demo_cli.png)
 
-Demo tao Root CA, Intermediate CA, phat hanh chung chi KANE, verify chain, thu hoi chung chi va kiem tra trang thai `Revoked`.
+Demo tao Root CA, Intermediate CA, phat hanh chung chi Pham Duy Khanh, verify chain, thu hoi chung chi va kiem tra trang thai `Revoked`.
 
 ### 3.3. Kiem tra cac file chung chi
 
@@ -129,7 +130,7 @@ python .\inspect_cert.py
 
 ![Chi tiet chung chi X.509](./images/lab2_step3_cert_details.png)
 
-Chung chi nguoi dung co `Subject` la `CN=KANE,O=HUTECH Security,C=VN` va duoc ky boi `Mini Intermediate CA`.
+Chung chi nguoi dung co `Subject` la `CN=Pham Duy Khanh 2387700029,O=HUTECH Security,C=VN` va duoc ky boi `Mini Intermediate CA`.
 
 ### 3.5. Thu hoi va kiem tra OCSP
 
