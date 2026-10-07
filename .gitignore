@@ -9,3 +9,11 @@ buoi2/lab2/certs/
 buoi2/lab1/files/*.enc
 buoi2/lab1/files/*.dec
 
+# Buoi 3
+certs/
+buoi3/secure-chat/certs/
+buoi3/netrecon/.env
+buoi3/netrecon/netrecon.log
+*.pem
+.env
+*.pdf
