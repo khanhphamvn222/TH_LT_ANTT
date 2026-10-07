@@ -1,5 +1,11 @@
 import unittest
+import os
+import sys
 import asyncio
+
+# Ensure test file directory is in sys.path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 from modules.filter_utils import filter_targets
 from modules.vuln_checker import check_vulns
 from modules.network_mapper import map_network
@@ -32,7 +38,6 @@ class TestNetRecon(unittest.TestCase):
         self.assertTrue(len(output) > 0)
 
     def test_port_scanner_mock(self):
-        # Scan 127.0.0.1 for high unreachable port
         res = asyncio.run(async_scan_ports("127.0.0.1", [65534], rate_limit=10))
         self.assertIsInstance(res, str)
 

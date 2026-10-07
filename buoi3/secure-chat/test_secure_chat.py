@@ -1,10 +1,14 @@
 import unittest
 import os
+import sys
 import socket
 import ssl
 import threading
 import time
 import binascii
+
+# Ensure test file directory is in sys.path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from message_encryption import MessageEncryption
 from connection_manager import ConnectionManager
