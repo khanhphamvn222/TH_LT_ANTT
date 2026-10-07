@@ -17,3 +17,5 @@ buoi3/netrecon/netrecon.log
 *.pem
 .env
 *.pdf
+
+netrecon.log
