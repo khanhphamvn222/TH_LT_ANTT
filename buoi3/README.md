@@ -118,11 +118,11 @@ python client.py
 
 ![Client 1 chat](./images/step4_secure_chat_client.png)
 
-3. **Khởi chạy Client 2 (Bob):**
+3. **Khởi chạy Client 2 (Phạm Duy Khánh - duykhanh):**
 ```powershell
 cd buoi3\secure-chat
 python client.py
-# Nhập username: bob
+# Nhập username: duykhanh
 ```
 
 ![Client 2 chat](./images/step5_secure_chat_multiclient.png)
@@ -148,7 +148,8 @@ Bộ công cụ CLI được xây dựng bằng thư viện `click`:
 1. **Quét cổng và nhận dạng dịch vụ:**
 ```powershell
 cd buoi3\netrecon
-python cli.py --target 127.0.0.1 --ports 80,443,8443 --mode all
+python cli.py --target scanme.nmap.org --ports 22,80 --mode scan
+python cli.py --target 192.168.1.1 --ports 21,22,80,443 --mode all
 ```
 
 ![NetRecon CLI Scan](./images/step6_netrecon_cli_scan.png)
@@ -174,7 +175,16 @@ Giao diện Web lắng nghe tại `http://127.0.0.1:5000`:
 
 Thực hiện quét và nhận kết quả phản hồi động (HTMX / kết quả tổng hợp):
 
-![Kết quả quét Web NetRecon](./images/step9_netrecon_web_result.png)
+![Kiểm tra email thông báo](./images/step9_netrecon_web_result.png)
+
+### 3.4. Đẩy mã nguồn lên GitHub
+```powershell
+git add .
+git commit -m "[add] netrecon"
+git push origin main
+```
+
+![Git push GitHub](./images/step11_git_push.png)
 
 ---
 
