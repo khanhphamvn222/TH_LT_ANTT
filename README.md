@@ -1,41 +1,54 @@
-# TH_LT_ANTT - Bai Thuc Hanh An Toan Thong Tin
+# TH_LT_ANTT - Bài Thực Hành An Toàn Thông Tin
 
-**Tac gia:** Phạm Duy Khánh - MSSV 2387700029
+**Tác giả:** Phạm Duy Khánh - MSSV 2387700029
 
-Repo duoc chia theo tung buoi thuc hanh:
+Repo được chia theo từng buổi thực hành:
 
 ```text
 .
-├── buoi1/    Cac lab validation, GitSecure pre-commit hook, SecureLogger
-├── buoi2/    Ma hoa, trien khai PKI va Certificate Authority
-└── buoi3/    Bao mat Socket voi SSL/TLS, SecureChat va cong cu NetRecon
+├── buoi1/    Các lab validation, GitSecure pre-commit hook, SecureLogger
+├── buoi2/    Mã hóa, triển khai PKI và Certificate Authority
+├── buoi3/    Bảo mật Socket với SSL/TLS, SecureChat và công cụ NetRecon
+└── buoi4/    Bảo mật Web App và API: WebVulnScanner và bộ công cụ JWTSecure
 ```
 
 ## Buoi1
 
-Noi dung goc gom:
+Nội dung gốc gồm:
 
-- `Lab01`: SecureValidator - thu vien kiem tra va lam sach dau vao.
-- `Lab02`: GitSecure - pre-commit hook phat hien thong tin nhay cam.
-- `Lab03`: SecureLogger - he thong ghi log bao mat tich hop Flask.
-- `screenshots`: anh minh hoa ket qua Buoi 1.
+- `Lab01`: SecureValidator - thư viện kiểm tra và làm sạch đầu vào.
+- `Lab02`: GitSecure - pre-commit hook phát hiện thông tin nhạy cảm.
+- `Lab03`: SecureLogger - hệ thống ghi log bảo mật tích hợp Flask.
+- `screenshots`: ảnh minh họa kết quả Buổi 1.
 
-Xem them tai [buoi1/README.md](buoi1/README.md).
+Xem thêm tại [buoi1/README.md](buoi1/README.md).
 
 ## Buoi2
 
-Noi dung moi gom:
+Nội dung gồm:
 
-- `crypto-toolkit`: AES-GCM, RSA signature, Argon2 password hashing, CLI, Flask API, Tkinter GUI va tests.
-- `mini-ca`: tao Root CA, Intermediate CA, cap chung chi, xac thuc certificate chain, revoke certificate va OCSP status.
+- `crypto-toolkit`: AES-GCM, RSA signature, Argon2 password hashing, CLI, Flask API, Tkinter GUI và tests.
+- `mini-ca`: tạo Root CA, Intermediate CA, cấp chứng chỉ, xác thực certificate chain, revoke certificate và OCSP status.
+- `images`: toàn bộ ảnh chụp minh chứng thực nghiệm Buổi 2.
 
-Xem them tai [buoi2/README.md](buoi2/README.md).
+Xem thêm tại [buoi2/README.md](buoi2/README.md).
 
 ## Buoi3
 
-Noi dung Buoi 3 gom:
+Nội dung Buổi 3 gồm:
 
-- `secure-chat`: Ung dung chat bao mat su dung SSL/TLS socket (mTLS), chung chi so X.509 (Root CA, Server, Client), ma hoa dau-cuoi E2EE (AES-256-CBC, PKCS7), ConnectionManager va RoomManager da luong.
-- `netrecon`: Bo cong cu trinh sat va quet mang tich hop quet cong bat dong bo (asyncio PortScanner), nhan dang dich vu voi Nmap, trich xuat Banner Grabber, so do mang ARP, kiem tra lo hong CVE (VulnChecker), giao dien Web Flask + HTMX va CLI voi Click.
+- `secure-chat`: Ứng dụng chat bảo mật sử dụng SSL/TLS socket (mTLS), chứng chỉ số X.509 (Root CA, Server, Client), mã hóa đầu-cuối E2EE (AES-256-CBC, PKCS7), ConnectionManager và RoomManager đa luồng.
+- `netrecon`: Bộ công cụ trinh sát và quét mạng tích hợp quét cổng bất đồng bộ (asyncio PortScanner), nhận dạng dịch vụ với Nmap, trích xuất Banner Grabber, sơ đồ mạng ARP, kiểm tra lỗ hổng CVE (VulnChecker), giao diện Web Flask + HTMX và CLI với Click.
+- `images`: toàn bộ ảnh chụp minh chứng thực nghiệm Buổi 3.
 
-Xem them tai [buoi3/README.md](buoi3/README.md).
+Xem thêm tại [buoi3/README.md](buoi3/README.md).
+
+## Buoi4
+
+Nội dung Buổi 4 gồm:
+
+- `web-vuln-scanner`: Bộ công cụ quét lỗ hổng ứng dụng Web tự động phát hiện Cross-Site Scripting (XSS), SQL Injection (SQLi), Cross-Site Request Forgery (CSRF), Server-Side Request Forgery (SSRF), tích hợp bộ sinh báo cáo tự động và giao diện Web UI Flask.
+- `jwt-security-tools`: Bộ công cụ bảo mật Web API toàn diện với JWT & OAuth 2.0 gồm JWTValidator, JWTCracker đa luồng, OAuthClient (Authorization Code flow), TokenManager quản lý Access/Refresh Token và cổng APIGateway xác thực Bearer token.
+- `images`: toàn bộ 13 ảnh chụp minh chứng quá trình thực hành và kiểm thử Buổi 4 (trích xuất từ báo cáo Doc1.docx).
+
+Xem thêm tại [buoi4/README.md](buoi4/README.md).
