@@ -52,3 +52,13 @@ Nội dung Buổi 4 gồm:
 - `images`: toàn bộ 13 ảnh chụp minh chứng quá trình thực hành và kiểm thử Buổi 4 (trích xuất từ báo cáo Doc1.docx).
 
 Xem thêm tại [buoi4/README.md](buoi4/README.md).
+
+## Buoi5
+
+Nội dung Buổi 5 gồm:
+
+- sast-tool: Bộ công cụ kiểm thử bảo mật tĩnh dựa trên phân tích cây cú pháp trừu tượng (AST Analyzer), kiểm tra chất lượng mã nguồn (Code Quality Checker), bộ quy tắc an ninh (Security Rule Engine), nhận diện mẫu mã độc (Vuln Pattern Matcher) và xuất báo cáo chuẩn quốc tế SARIF (Static Analysis Results Interchange Format).
+- dast-tool: Bộ công cụ kiểm thử bảo mật động trong thời gian thực thi (Runtime Security Testing & Sandbox Analysis) gồm Runtime Monitor theo dõi CPU/RAM/Handles, Memory Analyzer phát hiện rò rỉ và tràn bộ đệm, Network Traffic Analyzer, Security Behavior Checker kiểm soát lời gọi hệ thống độc hại, Virtual Sandbox cô lập mã không tin cậy và máy chủ Flask REST API giám sát.
+- images: toàn bộ 15 ảnh chụp minh chứng thực nghiệm xuyên suốt quá trình thực hành và kiểm thử Buổi 5.
+
+Xem thêm tại [buoi5/README.md](buoi5/README.md).
