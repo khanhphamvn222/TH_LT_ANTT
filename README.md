@@ -9,7 +9,9 @@ Repo được chia theo từng buổi thực hành:
 ├── buoi1/    Các lab validation, GitSecure pre-commit hook, SecureLogger
 ├── buoi2/    Mã hóa, triển khai PKI và Certificate Authority
 ├── buoi3/    Bảo mật Socket với SSL/TLS, SecureChat và công cụ NetRecon
-└── buoi4/    Bảo mật Web App và API: WebVulnScanner và bộ công cụ JWTSecure
+├── buoi4/    Bảo mật Web App và API: WebVulnScanner và bộ công cụ JWTSecure
+├── buoi5/    Phân tích và Kiểm thử Bảo mật: SAST Tool và DAST Sandbox Tool
+└── buoi6/    Bảo mật với DevSecOps: CI/CD Pipeline Automation, Security Gates và Pages Deployment
 ```
 
 ## Buoi1
@@ -62,3 +64,15 @@ Nội dung Buổi 5 gồm:
 - images: toàn bộ 15 ảnh chụp minh chứng thực nghiệm xuyên suốt quá trình thực hành và kiểm thử Buổi 5.
 
 Xem thêm tại [buoi5/README.md](buoi5/README.md).
+
+## Buoi6
+
+Nội dung Buổi 6 gồm:
+
+- `basic-pipeline`: Cấu hình Pipeline CI/CD cơ bản (3 Stage: build, test, deploy với 4 jobs) bằng GitHub Actions (`basic-pipeline.yml`).
+- `docusaurus-pipeline`: Dự án tài liệu Docusaurus tích hợp quy trình build tự động, đóng gói artifacts và xuất bản lên GitHub Pages (`deploy.yml`).
+- `security-scanner`: Bộ công cụ kiểm soát an ninh DevSecOps gồm Secret Scanner (phát hiện rò rỉ API key, password), IaC Security Checker (kiểm tra an toàn cấu hình Dockerfile, CI YAML) và bộ kiểm thử tự động `test_devsecops.py`.
+- `images`: toàn bộ ảnh chụp minh chứng thực nghiệm xuyên suốt quá trình thực hành và kiểm thử Buổi 6.
+
+Xem thêm tại [buoi6/README.md](buoi6/README.md).
+
